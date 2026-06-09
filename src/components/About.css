@@ -1,0 +1,111 @@
+.about {
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.about__glow {
+  position: absolute;
+  top: -60px; left: 30%;
+  width: 440px; height: 380px;
+  background: radial-gradient(ellipse, rgba(255,180,210,.28) 0%, transparent 65%);
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Text */
+.about__h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3.2vw, 2.7rem);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: var(--black);
+}
+.about__italic { font-style: italic; }
+
+.about__body {
+  font-size: .84rem;
+  color: var(--gray-text);
+  line-height: 1.82;
+  margin-bottom: 24px;
+  max-width: 380px;
+}
+
+.about__more {
+  font-size: .78rem;
+  color: var(--gray-text);
+  letter-spacing: .04em;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color var(--tr);
+}
+.about__more:hover { color: var(--pink); }
+
+/* Visual */
+.about__visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Red square top-right - exactly as in design */
+.about__red-sq {
+  position: absolute;
+  top: -12px; right: 10px;
+  width: 54px; height: 54px;
+  background: #e84040;
+  border-radius: 6px;
+  transform: rotate(6deg);
+  z-index: 0;
+  transition: transform var(--tr);
+}
+.about__visual:hover .about__red-sq { transform: rotate(14deg) scale(1.05); }
+
+/* Photo — rounded pill shape matching design */
+.about__photo-wrap {
+  width: 300px;
+  height: 280px;
+  border-radius: 160px 160px 140px 140px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 16px 48px rgba(0,0,0,.14);
+  transition: transform var(--tr);
+}
+.about__photo-wrap:hover { transform: translateY(-8px); }
+.about__photo {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+}
+
+/* Pink squiggle bottom-right of photo */
+.about__squiggle {
+  position: absolute;
+  bottom: -30px; right: -20px;
+  width: 60px; height: 90px;
+  opacity: .7;
+  z-index: 2;
+}
+
+@media (max-width: 860px) {
+  .about__grid { grid-template-columns: 1fr; gap: 44px; }
+  .about__visual { order: -1; justify-content: center; }
+  .about__photo-wrap { width: 260px; height: 240px; }
+  .about__red-sq { right: calc(50% - 160px); }
+}
+@media (max-width: 480px) {
+  .about { padding: 64px 0; }
+  .about__photo-wrap { width: 220px; height: 200px; }
+}

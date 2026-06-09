@@ -1,0 +1,109 @@
+.nl {
+  background: var(--mint-bg);
+  padding: 88px 0 96px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.nl__leaf {
+  position: absolute;
+  top: 30px; right: 80px;
+  width: 26px; height: 40px;
+}
+
+.nl__swirl {
+  display: block;
+  width: 200px;
+  margin: 0 auto 24px;
+}
+
+.nl__h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.18;
+  margin-bottom: 12px;
+  color: var(--black);
+}
+
+.nl__sub {
+  font-size: .84rem;
+  color: var(--gray-text);
+  margin-bottom: 32px;
+}
+
+.nl__form {
+  display: inline-flex;
+  max-width: 390px;
+  width: 100%;
+  background: #fff;
+  border-radius: 100px;
+  overflow: hidden;
+  border: 1.5px solid #ddd;
+  box-shadow: 0 4px 18px rgba(0,0,0,.09);
+}
+
+.nl__input {
+  flex: 1;
+  padding: 13px 20px;
+  border: none;
+  outline: none;
+  font-family: var(--font-sans);
+  font-size: .84rem;
+  background: transparent;
+  min-width: 0;
+  color: var(--black);
+}
+.nl__input::placeholder { color: var(--gray-muted); }
+
+.nl__btn {
+  padding: 13px 22px;
+  background: var(--pink);
+  color: #fff;
+  border: none;
+  font-size: .84rem;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background var(--tr);
+  flex-shrink: 0;
+}
+.nl__btn:hover { background: #c0306a; }
+
+.nl__err {
+  margin-top: 10px;
+  font-size: .76rem;
+  color: #dc2626;
+}
+
+.nl__success {
+  display: inline-block;
+  background: #fff;
+  border-radius: 100px;
+  padding: 14px 32px;
+  font-size: .9rem;
+  font-weight: 500;
+  box-shadow: 0 2px 12px rgba(0,0,0,.08);
+}
+
+@media (max-width: 480px) {
+  .nl { padding: 64px 0 72px; }
+  .nl__leaf { right: 16px; top: 16px; width: 18px; height: 28px; }
+  .nl__form {
+    flex-direction: column;
+    border-radius: 16px;
+    overflow: visible;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    gap: 10px;
+  }
+  .nl__input {
+    background: #fff;
+    border: 1.5px solid #ddd;
+    border-radius: 100px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.07);
+  }
+  .nl__btn { border-radius: 100px; width: 100%; padding: 13px; }
+}
